@@ -38,32 +38,6 @@ Public Class Form1
             Exit Sub
         End If
 
-        Dim svd_saveFile As New SaveFileDialog
-        With svd_saveFile
-            .Title = "Save completed form"
-            .DefaultExt = ".pdf"
-            .Filter = "PDF files|*.pdf|All files|*.*"
-        End With
-
-        svd_saveFile.ShowDialog()
-
-        If svd_saveFile.FileName = "" Then
-            Exit Sub
-        End If
-
-        Dim pdfTemplate = My.Resources._2014_VG_XY_Team_List___Editable_Form
-        Dim newFile As String = svd_saveFile.FileName
-
-        Dim pdfReader As New PdfReader(pdfTemplate)
-        Dim pdfStamper As New PdfStamper(pdfReader, New FileStream(newFile, FileMode.Create))
-        Dim pdfFormFields As AcroFields = pdfStamper.AcroFields
-
-        pdfFormFields.SetField("Name", tb_name.Text)
-        pdfFormFields.SetField("Player ID", tb_playerID.Text)
-        pdfFormFields.SetField("Event Name", tb_eventName.Text)
-        pdfFormFields.SetField("Age Division", If(age <= 11, "Junior", If(age <= 15, "Senior", "Master")))
-        pdfFormFields.SetField("DOB", dtp_dateOfBirth.Value.Date)
-
         Dim team As New List(Of Pokemon)
         Dim temp As New List(Of String)
 
@@ -104,6 +78,33 @@ Public Class Form1
         Next
 #End Region
 
+        Dim svd_saveFile As New SaveFileDialog
+        With svd_saveFile
+            .Title = "Save completed form"
+            .DefaultExt = ".pdf"
+            .Filter = "PDF files|*.pdf|All files|*.*"
+        End With
+
+        svd_saveFile.ShowDialog()
+
+        If svd_saveFile.FileName = "" Then
+            Exit Sub
+        End If
+
+        Dim pdfTemplate = My.Resources._2014_VG_XY_Team_List___Editable_Form
+        Dim newFile As String = svd_saveFile.FileName
+
+        Dim pdfReader As New PdfReader(pdfTemplate)
+        Dim pdfStamper As New PdfStamper(pdfReader, New FileStream(newFile, FileMode.Create))
+        Dim pdfFormFields As AcroFields = pdfStamper.AcroFields
+
+#Region "Write PDF"
+        pdfFormFields.SetField("Name", tb_name.Text)
+        pdfFormFields.SetField("Player ID", tb_playerID.Text)
+        pdfFormFields.SetField("Event Name", tb_eventName.Text)
+        pdfFormFields.SetField("Age Division", If(age <= 11, "Junior", If(age <= 15, "Senior", "Master")))
+        pdfFormFields.SetField("DOB", dtp_dateOfBirth.Value.Date)
+
         Dim i As Integer = 1
         For Each pokemon In team
             Dim suffix As String
@@ -128,6 +129,7 @@ Public Class Form1
         pdfStamper.FormFlattening = False
 
         pdfStamper.Close()
+#End Region
     End Sub
 End Class
 
