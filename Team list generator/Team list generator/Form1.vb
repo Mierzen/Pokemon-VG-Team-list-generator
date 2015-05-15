@@ -64,8 +64,92 @@ Public Class Form1
         pdfFormFields.SetField("Age Division", If(age <= 11, "Junior", If(age <= 15, "Senior", "Master")))
         pdfFormFields.SetField("DOB", dtp_dateOfBirth.Value.Date)
 
+        Dim team As New List(Of Pokemon)
+        Dim temp As New List(Of String)
+
+#Region "Read lines"
+        For Each line In tb_teamList.Lines
+            If line = "" OrElse line = Nothing Then
+                'skip
+            Else
+                Dim loc As Integer
+
+                loc = InStr(line, " @ ")
+                If loc <> 0 Then 'new pokemon
+                    temp.Add(Strings.Left(line, loc))
+                    temp.Add(Strings.Right(line, Len(line) - Len(temp(0)) - Len(" @ ") + 1))
+                End If
+
+                loc = InStr(line, "Ability: ")
+                If loc <> 0 Then
+                    temp.Add(Strings.Right(line, Len(line) - Len("Ability: ")))
+                End If
+
+                loc = InStr(line, " Nature")
+                If loc <> 0 Then
+                    temp.Add(Strings.Left(line, Len(line) - Len(" Nature")))
+                End If
+
+                loc = InStr(line, "- ")
+                Dim move As New List(Of String)
+                If loc <> 0 Then
+                    temp.Add(Strings.Right(line, Len(line) - Len("- ")))
+                End If
+
+                If temp.Count = 8 Then
+                    team.Add(New Pokemon(temp))
+                    temp.Clear()
+                End If
+            End If
+        Next
+#End Region
+
+        Dim i As Integer = 1
+        For Each pokemon In team
+            Dim suffix As String
+            If i = 1 Then
+                suffix = ""
+            Else
+                suffix = "_" & i
+            End If
+
+            pdfFormFields.SetField("Pokémon" & suffix, pokemon.Name)
+            pdfFormFields.SetField("Held Item" & suffix, pokemon.Item)
+            pdfFormFields.SetField("Ability" & suffix, pokemon.Ability)
+            pdfFormFields.SetField("Nature" & suffix, pokemon.Nature)
+
+            For j = 1 To 4
+                pdfFormFields.SetField("Move " & j & suffix, pokemon.Moves(j - 1))
+            Next
+
+            i += 1
+        Next
+
         pdfStamper.FormFlattening = False
 
         pdfStamper.Close()
+    End Sub
+End Class
+
+Public Class Pokemon
+    Public Name As String
+    Public Item As String
+    Public Ability As String
+    Public Nature As String
+    Public Moves As List(Of String)
+
+    Public Sub New(str As List(Of String))
+        For Each Item In str
+            Name = str(0)
+            Item = str(1)
+            Ability = str(2)
+            Nature = str(3)
+
+            Moves = New List(Of String)
+            Moves.Add(str(4))
+            Moves.Add(str(5))
+            Moves.Add(str(6))
+            Moves.Add(str(7))
+        Next
     End Sub
 End Class

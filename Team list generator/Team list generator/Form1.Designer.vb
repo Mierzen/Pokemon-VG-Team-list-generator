@@ -33,6 +33,7 @@ Partial Class Form1
         Me.tb_eventName = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_createForm = New System.Windows.Forms.Button()
+        Me.tb_teamList = New System.Windows.Forms.TextBox()
         Me.tlp_form.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,6 +52,7 @@ Partial Class Form1
         Me.tlp_form.Controls.Add(Me.tb_eventName, 1, 3)
         Me.tlp_form.Controls.Add(Me.Label5, 0, 4)
         Me.tlp_form.Controls.Add(Me.btn_createForm, 0, 6)
+        Me.tlp_form.Controls.Add(Me.tb_teamList, 0, 5)
         Me.tlp_form.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_form.Location = New System.Drawing.Point(0, 0)
         Me.tlp_form.Name = "tlp_form"
@@ -60,9 +62,9 @@ Partial Class Form1
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_form.Size = New System.Drawing.Size(295, 261)
+        Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tlp_form.Size = New System.Drawing.Size(295, 304)
         Me.tlp_form.TabIndex = 0
         '
         'Label1
@@ -157,18 +159,31 @@ Partial Class Form1
         'btn_createForm
         '
         Me.tlp_form.SetColumnSpan(Me.btn_createForm, 2)
-        Me.btn_createForm.Location = New System.Drawing.Point(3, 160)
+        Me.btn_createForm.Location = New System.Drawing.Point(3, 275)
         Me.btn_createForm.Name = "btn_createForm"
         Me.btn_createForm.Size = New System.Drawing.Size(75, 23)
         Me.btn_createForm.TabIndex = 9
         Me.btn_createForm.Text = "Create form"
         Me.btn_createForm.UseVisualStyleBackColor = True
         '
+        'tb_teamList
+        '
+        Me.tb_teamList.AcceptsReturn = True
+        Me.tb_teamList.AllowDrop = True
+        Me.tlp_form.SetColumnSpan(Me.tb_teamList, 2)
+        Me.tb_teamList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tb_teamList.Location = New System.Drawing.Point(3, 140)
+        Me.tb_teamList.Multiline = True
+        Me.tb_teamList.Name = "tb_teamList"
+        Me.tb_teamList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.tb_teamList.Size = New System.Drawing.Size(289, 129)
+        Me.tb_teamList.TabIndex = 10
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(295, 261)
+        Me.ClientSize = New System.Drawing.Size(295, 304)
         Me.Controls.Add(Me.tlp_form)
         Me.Name = "Form1"
         Me.Text = "Pokémon VG team list generator"
@@ -189,4 +204,5 @@ Partial Class Form1
     Friend WithEvents tb_eventName As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btn_createForm As Button
+    Friend WithEvents tb_teamList As TextBox
 End Class
