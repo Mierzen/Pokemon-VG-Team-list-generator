@@ -24,13 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.tlp_form = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tb_name = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.tb_playerID = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtp_dateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.tb_eventName = New System.Windows.Forms.TextBox()
         Me.tlp_form.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,13 +40,13 @@ Partial Class Form1
         Me.tlp_form.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.tlp_form.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlp_form.Controls.Add(Me.Label1, 0, 0)
-        Me.tlp_form.Controls.Add(Me.TextBox1, 1, 0)
+        Me.tlp_form.Controls.Add(Me.tb_name, 1, 0)
         Me.tlp_form.Controls.Add(Me.Label2, 0, 1)
-        Me.tlp_form.Controls.Add(Me.TextBox2, 1, 1)
+        Me.tlp_form.Controls.Add(Me.tb_playerID, 1, 1)
         Me.tlp_form.Controls.Add(Me.Label3, 0, 2)
-        Me.tlp_form.Controls.Add(Me.DateTimePicker1, 1, 2)
+        Me.tlp_form.Controls.Add(Me.dtp_dateOfBirth, 1, 2)
         Me.tlp_form.Controls.Add(Me.Label4, 0, 3)
-        Me.tlp_form.Controls.Add(Me.TextBox3, 1, 3)
+        Me.tlp_form.Controls.Add(Me.tb_eventName, 1, 3)
         Me.tlp_form.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_form.Location = New System.Drawing.Point(0, 0)
         Me.tlp_form.Name = "tlp_form"
@@ -69,13 +69,13 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Name"
         '
-        'TextBox1
+        'tb_name
         '
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Location = New System.Drawing.Point(74, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(207, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.tb_name.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tb_name.Location = New System.Drawing.Point(74, 3)
+        Me.tb_name.Name = "tb_name"
+        Me.tb_name.Size = New System.Drawing.Size(207, 20)
+        Me.tb_name.TabIndex = 1
         '
         'Label2
         '
@@ -87,13 +87,13 @@ Partial Class Form1
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Player ID"
         '
-        'TextBox2
+        'tb_playerID
         '
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox2.Location = New System.Drawing.Point(74, 29)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(207, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.tb_playerID.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tb_playerID.Location = New System.Drawing.Point(74, 29)
+        Me.tb_playerID.Name = "tb_playerID"
+        Me.tb_playerID.Size = New System.Drawing.Size(207, 20)
+        Me.tb_playerID.TabIndex = 3
         '
         'Label3
         '
@@ -105,13 +105,13 @@ Partial Class Form1
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Date of birth"
         '
-        'DateTimePicker1
+        'dtp_dateOfBirth
         '
-        Me.DateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DateTimePicker1.Location = New System.Drawing.Point(74, 55)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(207, 20)
-        Me.DateTimePicker1.TabIndex = 5
+        Me.dtp_dateOfBirth.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtp_dateOfBirth.Location = New System.Drawing.Point(74, 55)
+        Me.dtp_dateOfBirth.Name = "dtp_dateOfBirth"
+        Me.dtp_dateOfBirth.Size = New System.Drawing.Size(207, 20)
+        Me.dtp_dateOfBirth.TabIndex = 5
         '
         'Label4
         '
@@ -123,13 +123,13 @@ Partial Class Form1
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Event name"
         '
-        'TextBox3
+        'tb_eventName
         '
-        Me.TextBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox3.Location = New System.Drawing.Point(74, 81)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(207, 20)
-        Me.TextBox3.TabIndex = 7
+        Me.tb_eventName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tb_eventName.Location = New System.Drawing.Point(74, 81)
+        Me.tb_eventName.Name = "tb_eventName"
+        Me.tb_eventName.Size = New System.Drawing.Size(207, 20)
+        Me.tb_eventName.TabIndex = 7
         '
         'Form1
         '
@@ -147,11 +147,11 @@ Partial Class Form1
 
     Friend WithEvents tlp_form As TableLayoutPanel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tb_name As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents tb_playerID As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtp_dateOfBirth As DateTimePicker
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents tb_eventName As TextBox
 End Class
