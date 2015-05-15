@@ -166,6 +166,11 @@ Public Class Form1
         pdfStamper.Close()
 #End Region
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Select()
+        dtp_dateOfBirth.Value = Date.Today
+    End Sub
 End Class
 
 Public Class Pokemon
