@@ -41,6 +41,36 @@ Public Class Form1
         Dim team As New List(Of Pokemon)
         Dim temp As New List(Of String)
 
+#Region "Check line count"
+        Dim lineCount As Integer = 0
+        Dim pokCount As Integer = 0
+
+        For Each line In tb_teamList.Lines
+            If line = "" OrElse line = Nothing Then
+                'do nothing
+            Else
+                lineCount += 1
+
+                If InStr(line, "@") <> 0 Then
+                    pokCount += 1
+                End If
+            End If
+        Next
+
+        If pokCount <> 6 Then
+            MsgBox("It seems that there are not 6 Pokémon in your team." & vbNewLine & "Please check your input.", vbOKOnly Or vbCritical, "Invalid input")
+            Exit Sub
+        End If
+
+        If lineCount = 49 OrElse lineCount = 49 - 6 Then 'EV lines may be omitted
+            'it is right
+        Else
+            MsgBox("It seems that there is something wrong with your team list input." & vbNewLine & "Please check your input.", vbOKOnly Or vbCritical, "Invalid input")
+            Exit Sub
+        End If
+#End Region
+
+
 #Region "Read lines"
         For Each line In tb_teamList.Lines
             If line = "" OrElse line = Nothing Then
