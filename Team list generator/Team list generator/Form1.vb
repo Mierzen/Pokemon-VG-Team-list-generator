@@ -15,7 +15,9 @@ Public Class Form1
     End Sub
 
     Private Sub tb_playerID_Leave(sender As Object, e As EventArgs) Handles tb_playerID.Leave
-        If Strings.Len(tb_playerID.Text) <> 7 Then
+        Dim isInt As Boolean = Integer.TryParse(tb_playerID.Text, isInt)
+
+        If Strings.Len(tb_playerID.Text) <> 7 OrElse isInt = False Then
             MsgBox("Incorrect Player ID entered." & vbNewLine & "Please correct your Player ID.", vbOKOnly Or vbCritical, "Incorrect Player ID")
             tb_playerID.Focus()
             tb_playerID.SelectAll()
