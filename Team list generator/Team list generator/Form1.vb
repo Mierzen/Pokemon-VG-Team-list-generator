@@ -7,11 +7,16 @@ Public Class Form1
 
 #Region "Validation"
     Private Sub tb_name_Leave(sender As Object, e As EventArgs) Handles tb_name.Leave
-        If Not Regex.Match(tb_name.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Or tb_name.Text = "" Then
-            MsgBox("Please enter only alphabetic characters.", vbOKOnly Or vbCritical, "Incorrect name")
-            tb_name.Focus()
-            tb_name.SelectAll()
-        End If
+        Dim str As String = tb_name.Text
+
+        For i = 0 To str.Length - 1
+            If Char.IsLetter(str(i)) OrElse str(i) = "-" Then
+            Else
+                MsgBox("Please enter only alphabetic characters.", vbOKOnly Or vbCritical, "Incorrect name")
+                tb_name.Focus()
+                tb_name.SelectAll()
+            End If
+        Next
     End Sub
 
     Private Sub tb_playerID_Leave(sender As Object, e As EventArgs) Handles tb_playerID.Leave
