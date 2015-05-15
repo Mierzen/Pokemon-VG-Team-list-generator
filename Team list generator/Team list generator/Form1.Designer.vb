@@ -31,6 +31,8 @@ Partial Class Form1
         Me.dtp_dateOfBirth = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tb_eventName = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btn_createForm = New System.Windows.Forms.Button()
         Me.tlp_form.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,15 +49,19 @@ Partial Class Form1
         Me.tlp_form.Controls.Add(Me.dtp_dateOfBirth, 1, 2)
         Me.tlp_form.Controls.Add(Me.Label4, 0, 3)
         Me.tlp_form.Controls.Add(Me.tb_eventName, 1, 3)
+        Me.tlp_form.Controls.Add(Me.Label5, 0, 4)
+        Me.tlp_form.Controls.Add(Me.btn_createForm, 0, 6)
         Me.tlp_form.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlp_form.Location = New System.Drawing.Point(0, 0)
         Me.tlp_form.Name = "tlp_form"
-        Me.tlp_form.RowCount = 5
+        Me.tlp_form.RowCount = 7
+        Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.Size = New System.Drawing.Size(284, 261)
         Me.tlp_form.TabIndex = 0
         '
@@ -131,6 +137,28 @@ Partial Class Form1
         Me.tb_eventName.Size = New System.Drawing.Size(207, 20)
         Me.tb_eventName.TabIndex = 7
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.tlp_form.SetColumnSpan(Me.Label5, 2)
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Location = New System.Drawing.Point(3, 124)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(3, 20, 3, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(278, 26)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Paste your team list in Pokémon Showdown format below:"
+        '
+        'btn_createForm
+        '
+        Me.tlp_form.SetColumnSpan(Me.btn_createForm, 2)
+        Me.btn_createForm.Location = New System.Drawing.Point(3, 173)
+        Me.btn_createForm.Name = "btn_createForm"
+        Me.btn_createForm.Size = New System.Drawing.Size(75, 23)
+        Me.btn_createForm.TabIndex = 9
+        Me.btn_createForm.Text = "Create form"
+        Me.btn_createForm.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -154,4 +182,6 @@ Partial Class Form1
     Friend WithEvents dtp_dateOfBirth As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents tb_eventName As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btn_createForm As Button
 End Class
