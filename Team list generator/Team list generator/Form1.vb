@@ -29,4 +29,41 @@ Public Class Form1
         End If
     End Sub
 #End Region
+
+    Private Sub btn_createForm_Click(sender As Object, e As EventArgs) Handles btn_createForm.Click
+        If tb_name.Text = "" OrElse tb_playerID.Text = "" OrElse dtp_dateOfBirth.Value.Date = Date.Today Then
+            MsgBox("Form input not complete." & vbNewLine & "Please fill in the needed text boxes.", vbOKOnly Or vbCritical, "Incomplete form entry")
+            Exit Sub
+        End If
+
+        Dim svd_saveFile As New SaveFileDialog
+        With svd_saveFile
+            .Title = "Save completed form"
+            .DefaultExt = ".pdf"
+            .Filter = "PDF files|*.pdf|All files|*.*"
+        End With
+
+        svd_saveFile.ShowDialog()
+
+        If svd_saveFile.FileName = "" Then
+            Exit Sub
+        End If
+
+        Dim pdfTemplate = My.Resources._2014_VG_XY_Team_List___Editable_Form
+        Dim newFile As String = svd_saveFile.FileName
+
+        Dim pdfReader As New PdfReader(pdfTemplate)
+        Dim pdfStamper As New PdfStamper(pdfReader, New FileStream(newFile, FileMode.Create))
+        Dim pdfFormFields As AcroFields = pdfStamper.AcroFields
+
+        pdfFormFields.SetField("Name", tb_name.Text)
+        pdfFormFields.SetField("Player ID", tb_playerID.Text)
+        pdfFormFields.SetField("Event Name", tb_eventName.Text)
+        pdfFormFields.SetField("Age Division", If(age <= 11, "Junior", If(age <= 15, "Senior", "Master")))
+        pdfFormFields.SetField("DOB", dtp_dateOfBirth.Value.Date)
+
+        pdfStamper.FormFlattening = False
+
+        pdfStamper.Close()
+    End Sub
 End Class
