@@ -64,7 +64,7 @@ Partial Class Form1
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlp_form.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlp_form.Size = New System.Drawing.Size(295, 304)
+        Me.tlp_form.Size = New System.Drawing.Size(294, 301)
         Me.tlp_form.TabIndex = 0
         '
         'Label1
@@ -83,7 +83,7 @@ Partial Class Form1
         Me.tb_name.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tb_name.Location = New System.Drawing.Point(74, 3)
         Me.tb_name.Name = "tb_name"
-        Me.tb_name.Size = New System.Drawing.Size(218, 20)
+        Me.tb_name.Size = New System.Drawing.Size(217, 20)
         Me.tb_name.TabIndex = 1
         '
         'Label2
@@ -102,7 +102,7 @@ Partial Class Form1
         Me.tb_playerID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tb_playerID.Location = New System.Drawing.Point(74, 29)
         Me.tb_playerID.Name = "tb_playerID"
-        Me.tb_playerID.Size = New System.Drawing.Size(218, 20)
+        Me.tb_playerID.Size = New System.Drawing.Size(217, 20)
         Me.tb_playerID.TabIndex = 3
         '
         'Label3
@@ -121,7 +121,7 @@ Partial Class Form1
         Me.dtp_dateOfBirth.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtp_dateOfBirth.Location = New System.Drawing.Point(74, 55)
         Me.dtp_dateOfBirth.Name = "dtp_dateOfBirth"
-        Me.dtp_dateOfBirth.Size = New System.Drawing.Size(218, 20)
+        Me.dtp_dateOfBirth.Size = New System.Drawing.Size(217, 20)
         Me.dtp_dateOfBirth.TabIndex = 5
         '
         'Label4
@@ -140,7 +140,7 @@ Partial Class Form1
         Me.tb_eventName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tb_eventName.Location = New System.Drawing.Point(74, 81)
         Me.tb_eventName.Name = "tb_eventName"
-        Me.tb_eventName.Size = New System.Drawing.Size(218, 20)
+        Me.tb_eventName.Size = New System.Drawing.Size(217, 20)
         Me.tb_eventName.TabIndex = 7
         '
         'Label5
@@ -151,13 +151,14 @@ Partial Class Form1
         Me.Label5.Location = New System.Drawing.Point(3, 124)
         Me.Label5.Margin = New System.Windows.Forms.Padding(3, 20, 3, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(289, 13)
+        Me.Label5.Size = New System.Drawing.Size(288, 13)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Paste your team list in Pokémon Showdown format below:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_createForm
         '
+        Me.btn_createForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.tlp_form.SetColumnSpan(Me.btn_createForm, 2)
         Me.btn_createForm.Location = New System.Drawing.Point(3, 275)
         Me.btn_createForm.Name = "btn_createForm"
@@ -170,21 +171,24 @@ Partial Class Form1
         '
         Me.tb_teamList.AcceptsReturn = True
         Me.tb_teamList.AllowDrop = True
+        Me.tb_teamList.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tlp_form.SetColumnSpan(Me.tb_teamList, 2)
-        Me.tb_teamList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tb_teamList.Location = New System.Drawing.Point(3, 140)
         Me.tb_teamList.Multiline = True
         Me.tb_teamList.Name = "tb_teamList"
         Me.tb_teamList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tb_teamList.Size = New System.Drawing.Size(289, 129)
+        Me.tb_teamList.Size = New System.Drawing.Size(288, 129)
         Me.tb_teamList.TabIndex = 10
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(295, 304)
+        Me.ClientSize = New System.Drawing.Size(294, 301)
         Me.Controls.Add(Me.tlp_form)
+        Me.MaximumSize = New System.Drawing.Size(500, 530)
+        Me.MinimumSize = New System.Drawing.Size(310, 340)
         Me.Name = "Form1"
         Me.Text = "Pokémon VG team list generator"
         Me.tlp_form.ResumeLayout(False)

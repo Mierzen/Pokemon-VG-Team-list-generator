@@ -171,6 +171,20 @@ Public Class Form1
         Me.Select()
         dtp_dateOfBirth.Value = Date.Today
     End Sub
+
+    Dim heightRequiredByRest As Integer
+    Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
+        'tbTeamH = tb_teamList.Size.Height
+        If heightRequiredByRest = Nothing Then
+            heightRequiredByRest = tlp_form.Size.Height - tb_teamList.Size.Height
+        End If
+
+        If Not heightRequiredByRest = Nothing Then
+            tb_teamList.Size = New Size(tb_teamList.Width, tlp_form.Size.Height - heightRequiredByRest)
+        End If
+
+        btn_createForm.Margin = New Padding((Me.Size.Width - btn_createForm.Size.Width - 6 - 20) / 2, btn_createForm.Margin.Top, btn_createForm.Margin.Right, btn_createForm.Margin.Bottom)
+    End Sub
 End Class
 
 Public Class Pokemon
