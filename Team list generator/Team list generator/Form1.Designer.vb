@@ -164,7 +164,7 @@ Partial Class Form1
         Me.btn_createForm.Location = New System.Drawing.Point(3, 275)
         Me.btn_createForm.Name = "btn_createForm"
         Me.btn_createForm.Size = New System.Drawing.Size(75, 23)
-        Me.btn_createForm.TabIndex = 9
+        Me.btn_createForm.TabIndex = 10
         Me.btn_createForm.Text = "Create form"
         Me.btn_createForm.UseVisualStyleBackColor = True
         '
@@ -175,7 +175,7 @@ Partial Class Form1
         Me.tb_teamList.Location = New System.Drawing.Point(3, 140)
         Me.tb_teamList.Name = "tb_teamList"
         Me.tb_teamList.Size = New System.Drawing.Size(288, 129)
-        Me.tb_teamList.TabIndex = 10
+        Me.tb_teamList.TabIndex = 9
         Me.tb_teamList.Text = ""
         '
         'Form1
