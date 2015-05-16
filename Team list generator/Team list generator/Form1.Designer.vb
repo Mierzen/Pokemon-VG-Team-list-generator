@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.tlp_form = New System.Windows.Forms.TableLayoutPanel()
@@ -34,7 +34,7 @@ Partial Class Form1
         Me.tb_eventName = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btn_createForm = New System.Windows.Forms.Button()
-        Me.tb_teamList = New System.Windows.Forms.TextBox()
+        Me.tb_teamList = New System.Windows.Forms.RichTextBox()
         Me.tlp_form.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -170,17 +170,13 @@ Partial Class Form1
         '
         'tb_teamList
         '
-        Me.tb_teamList.AcceptsReturn = True
-        Me.tb_teamList.AllowDrop = True
-        Me.tb_teamList.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tlp_form.SetColumnSpan(Me.tb_teamList, 2)
+        Me.tb_teamList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tb_teamList.Location = New System.Drawing.Point(3, 140)
-        Me.tb_teamList.Multiline = True
         Me.tb_teamList.Name = "tb_teamList"
-        Me.tb_teamList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.tb_teamList.Size = New System.Drawing.Size(288, 129)
         Me.tb_teamList.TabIndex = 10
+        Me.tb_teamList.Text = ""
         '
         'Form1
         '
@@ -211,5 +207,5 @@ Partial Class Form1
     Friend WithEvents tb_eventName As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btn_createForm As Button
-    Friend WithEvents tb_teamList As TextBox
+    Friend WithEvents tb_teamList As RichTextBox
 End Class
