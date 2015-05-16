@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports iTextSharp.text.pdf
-Imports System.Text.RegularExpressions
 
 Public Class Form1
     Dim age As Integer
@@ -174,7 +173,6 @@ Public Class Form1
 
     Dim heightRequiredByRest As Integer
     Private Sub Form1_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
-        'tbTeamH = tb_teamList.Size.Height
         If heightRequiredByRest = Nothing Then
             heightRequiredByRest = tlp_form.Size.Height - tb_teamList.Size.Height
         End If
