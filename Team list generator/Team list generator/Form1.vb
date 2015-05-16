@@ -166,6 +166,34 @@ Public Class Form1
 
         pdfStamper.Close()
 #End Region
+
+        Beep()
+
+        Try
+            Dim result As MsgBoxResult = MsgBox("Done!" & vbNewLine & vbNewLine & "Open the PDF file?", vbYesNo, "Open PDF?")
+
+            If result = vbYes Then
+                Dim p As New System.Diagnostics.Process
+                Dim s As New System.Diagnostics.ProcessStartInfo(newFile)
+                s.UseShellExecute = True
+                s.WindowStyle = ProcessWindowStyle.Normal
+                p.StartInfo = s
+                p.Start()
+            Else
+                Dim result2 As MsgBoxResult = MsgBox("Open the file location?", vbYesNo, "Open folder?")
+                If result2 = vbYes Then
+                    Dim p As New System.Diagnostics.Process
+                    Dim s As New System.Diagnostics.ProcessStartInfo(Strings.Left(newFile, InStrRev(newFile, "\")))
+                    s.UseShellExecute = True
+                    s.WindowStyle = ProcessWindowStyle.Normal
+                    p.StartInfo = s
+                    p.Start()
+                End If
+            End If
+        Catch
+        End Try
+
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
