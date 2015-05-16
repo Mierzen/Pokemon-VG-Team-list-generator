@@ -189,10 +189,10 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(294, 301)
         Me.Controls.Add(Me.tlp_form)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(500, 530)
         Me.MinimumSize = New System.Drawing.Size(310, 340)
         Me.Name = "Form1"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VG team list generator"
         Me.tlp_form.ResumeLayout(False)
         Me.tlp_form.PerformLayout()
