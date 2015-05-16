@@ -1,4 +1,6 @@
-﻿Imports System.IO
+﻿Imports System.Drawing
+Imports System.IO
+Imports System.Windows.Forms
 Imports iTextSharp.text.pdf
 
 Public Class Form1
@@ -182,7 +184,26 @@ Public Class Form1
         End If
 
         btn_createForm.Margin = New Padding((Me.Size.Width - btn_createForm.Size.Width - 6 - 20) / 2, btn_createForm.Margin.Top, btn_createForm.Margin.Right, btn_createForm.Margin.Bottom)
+
+
+        Dim availableWidth = CalcAvaliableCaptionWidth()
+        Dim formTextWidth As Integer = TextRenderer.MeasureText("Pokémon VG team list generator", SystemFonts.CaptionFont).Width
+
+        If formTextWidth > availableWidth Then
+            Me.Text = "VG team list generator"
+        Else
+            Me.Text = "Pokémon VG team list generator"
+        End If
     End Sub
+
+    Private Function CalcAvaliableCaptionWidth() As Integer
+        ' Form width
+        ' Icon
+        ' Minimize button (26 on Win8)
+        ' Maximize button (26 on Win8)
+        ' Close button (45 on Win8)
+        Return Width - (If(Icon Is Nothing, 0, Icon.Width)) - (If(MinimizeBox, SystemInformation.CaptionButtonSize.Width, 0)) - (If(MaximizeBox, SystemInformation.CaptionButtonSize.Width, 0)) - SystemInformation.CaptionButtonSize.Width
+    End Function
 End Class
 
 Public Class Pokemon
