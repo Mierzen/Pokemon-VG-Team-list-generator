@@ -204,6 +204,10 @@ Public Class Form1
         ' Close button (45 on Win8)
         Return Width - (If(Icon Is Nothing, 0, Icon.Width)) - (If(MinimizeBox, SystemInformation.CaptionButtonSize.Width, 0)) - (If(MaximizeBox, SystemInformation.CaptionButtonSize.Width, 0)) - SystemInformation.CaptionButtonSize.Width
     End Function
+
+    Private Sub Form1_ResizeEnd(sender As Object, e As EventArgs) Handles MyBase.ResizeEnd
+        Me.CenterToScreen()
+    End Sub
 End Class
 
 Public Class Pokemon

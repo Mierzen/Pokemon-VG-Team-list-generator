@@ -192,6 +192,7 @@ Partial Class Form1
         Me.MaximumSize = New System.Drawing.Size(500, 530)
         Me.MinimumSize = New System.Drawing.Size(310, 340)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VG team list generator"
         Me.tlp_form.ResumeLayout(False)
         Me.tlp_form.PerformLayout()
